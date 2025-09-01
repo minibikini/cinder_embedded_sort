@@ -1,4 +1,4 @@
-An attempt to reproduce the error with Cider and embedded resources sorting (filter works just fine). See the [discussion](https://discord.com/channels/711271361523351632/1391786417348415559/1411834296184078336) on the Ash Discord for the context.
+An attempt to reproduce the error with [Cinder](https://github.com/sevenseacat/cinder) and embedded resources sorting (filter works just fine). See the [discussion](https://discord.com/channels/711271361523351632/1391786417348415559/1411834296184078336) on the Ash Discord for the context.
 
 - Run `mix setup` to install, setup dependencies and seed the SQLite database
 
