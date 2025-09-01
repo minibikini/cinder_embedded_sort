@@ -2,6 +2,7 @@
    https://tailwindcss.com/docs/configuration */
 
 @import "tailwindcss" source(none);
+@source "../../deps/cinder";
 @source "../css";
 @source "../js";
 @source "../../lib/cinder_embedded_sort_web";

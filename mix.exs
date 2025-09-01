@@ -41,6 +41,7 @@ defmodule CinderEmbeddedSort.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:cinder, "~> 0.6"},
       {:sourceror, "~> 1.8", only: [:dev, :test]},
       {:ash_sqlite, "~> 0.2"},
       {:ash_phoenix, "~> 2.0"},
