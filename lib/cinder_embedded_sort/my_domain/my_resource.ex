@@ -21,7 +21,7 @@ defmodule CinderEmbeddedSort.MyDomain.MyResource do
       public? true
     end
 
-    attribute :settings, :map do
+    attribute :settings, CinderEmbeddedSort.MyDomain.MyResourceSettings do
       allow_nil? false
       public? true
     end

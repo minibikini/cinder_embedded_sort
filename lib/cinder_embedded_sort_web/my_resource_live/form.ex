@@ -18,7 +18,7 @@ defmodule CinderEmbeddedSortWeb.MyResourceLive.Form do
       >
         <.input field={@form[:name]} type="text" label="Name" />
 
-        <.inputs_for :let={p_form} field={@form[:params]}>
+        <.inputs_for :let={p_form} field={@form[:settings]}>
           <.input field={p_form[:a]} type="text" label="A" />
           <.input field={p_form[:b]} type="text" label="B" />
         </.inputs_for>
