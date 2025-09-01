@@ -18,6 +18,12 @@ defmodule CinderEmbeddedSortWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/my_resources", MyResourceLive.Index, :index
+    live "/my_resources/new", MyResourceLive.Form, :new
+    live "/my_resources/:id/edit", MyResourceLive.Form, :edit
+
+    live "/my_resources/:id", MyResourceLive.Show, :show
   end
 
   # Other scopes may use custom stacks.
