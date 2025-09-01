@@ -14,34 +14,11 @@ defmodule CinderEmbeddedSortWeb.MyResourceLive.Index do
         </:actions>
       </.header>
 
-      <.table
-        id="my_resources"
-        rows={@streams.my_resources}
-        row_click={fn {_id, my_resource} -> JS.navigate(~p"/my_resources/#{my_resource}") end}
-      >
-        <:col :let={{_id, my_resource}} label="Id">{my_resource.id}</:col>
-
-        <:col :let={{_id, my_resource}} label="Name">{my_resource.name}</:col>
-
-        <:col :let={{_id, my_resource}} label="Settings">{my_resource.settings}</:col>
-
-        <:action :let={{_id, my_resource}}>
-          <div class="sr-only">
-            <.link navigate={~p"/my_resources/#{my_resource}"}>Show</.link>
-          </div>
-
-          <.link navigate={~p"/my_resources/#{my_resource}/edit"}>Edit</.link>
-        </:action>
-
-        <:action :let={{id, my_resource}}>
-          <.link
-            phx-click={JS.push("delete", value: %{id: my_resource.id}) |> hide("##{id}")}
-            data-confirm="Are you sure?"
-          >
-            Delete
-          </.link>
-        </:action>
-      </.table>
+      <Cinder.Table.table resource={CinderEmbeddedSort.MyDomain.MyResource}>
+        <:col :let={r} field="name" filter sort>{r.name}</:col>
+        <:col :let={r} field="settings__a" filter sort>{r.settings.a}</:col>
+        <:col :let={r} field="settings__b" filter sort>{r.settings.b}</:col>
+      </Cinder.Table.table>
     </Layouts.app>
     """
   end
